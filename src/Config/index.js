@@ -3,3 +3,5 @@ export const Config = {
 };
 
 export const API_KEY = '2ef3c06a1b2c5ec5cfc90794b0bb08cb';
+
+export const Image_URL = 'https://image.tmdb.org/t/p/original';
