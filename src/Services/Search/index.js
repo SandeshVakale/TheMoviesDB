@@ -11,6 +11,7 @@ export const search = async query => {
       payload: response.data,
     });
   } catch (error) {
+    console.log(error.response.data);
     errorRes = error.response.data;
   }
   return response?.status === 200 ? true : errorRes;
