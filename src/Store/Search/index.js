@@ -6,7 +6,7 @@ const initialState = {
 
 const setMovies = createAction('movies/setMovies');
 
-export const moviesModel = createReducer(initialState, builder => {
+export const searchModel = createReducer(initialState, builder => {
   builder.addCase(setMovies, (state, action) => {
     state.movies = action.payload;
   });

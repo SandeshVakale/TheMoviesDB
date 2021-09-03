@@ -6,16 +6,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {useEffect} from 'react';
 import HomeScreen from '../Screens/Home';
+import DetailScreen from '../Screens/Detail';
 const AppStack = createNativeStackNavigator();
-
-function DetailScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button title="Go Back" onPress={() => navigation.goBack()} />
-    </View>
-  );
-}
 
 export default function Navigation() {
   const handleBackButton = () => {
@@ -43,13 +35,7 @@ export default function Navigation() {
             name="Home"
             component={HomeScreen}
           />
-          <AppStack.Screen
-            options={{
-              headerShown: false,
-            }}
-            name="Detail"
-            component={DetailScreen}
-          />
+          <AppStack.Screen name="Detail" component={DetailScreen} options={({ route }) => ({ title: route.params.name })}/>
         </AppStack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

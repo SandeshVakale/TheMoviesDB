@@ -12,16 +12,17 @@ import {
 } from 'redux-persist';
 import {configureStore} from '@reduxjs/toolkit';
 
-import {moviesModel} from './Movies';
-
+import {searchModel} from './Search';
+import {movieModel} from './Movie';
 const reducers = combineReducers({
-  moviesModel,
+  searchModel,
+  movieModel,
 });
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  blacklist: ['moviesModel'],
+  blacklist: ['searchModel', 'movieModel'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

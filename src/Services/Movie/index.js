@@ -1,12 +1,12 @@
 import {WAxios} from '../index';
 import {store} from '../../Store';
-export const search = async query => {
+export const getMovie = async movie_id => {
   let response;
   let errorRes;
   try {
-    response = await WAxios.get(`search/movie?query=${query}`);
+    response = await WAxios.get(`movie/${movie_id}`);
     store.dispatch({
-      type: 'movies/setMovies',
+      type: 'movies/setMovie',
       payload: response.data,
     });
   } catch (error) {

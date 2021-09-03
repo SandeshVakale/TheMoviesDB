@@ -11,7 +11,7 @@ import styles from './styles';
 function HomeScreen() {
   const navigation = useNavigation();
   const [query, setQuery] = useState('');
-  const {movies} = useSelector(state => state.moviesModel);
+  const {movies} = useSelector(state => state.searchModel);
   const onSearch = () => {
     search(query);
   };
@@ -37,7 +37,12 @@ function HomeScreen() {
           data={movies?.results}
           renderItem={(item, index) => (
             <TouchableNativeFeedback
-              onPress={() => navigation.navigate('Detail')}>
+              onPress={() =>
+                navigation.navigate('Detail', {
+                  id: item.item.id,
+                  name: item.item.original_title,
+                })
+              }>
               <Card key={index}>
                 <Card.FeaturedTitle
                   style={{color: 'black', textAlign: 'center'}}>
