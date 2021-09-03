@@ -28,7 +28,7 @@ function DetailScreen({route}) {
         <Card>
           <Card.Title>Genres</Card.Title>
           <Card.Divider />
-          {movie?.genres.map((u, i) => {
+          {movie?.genres?.map((u, i) => {
             return (
               <View key={i}>
                 <Text>{u.name}</Text>
