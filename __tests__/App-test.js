@@ -5,7 +5,6 @@ import DetailScreen from '../src/Screens/Detail';
 import renderer from 'react-test-renderer';
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
-import {movieModel} from '../src/Store/Movie';
 jest.useFakeTimers();
 jest.mock('react-native-elements', () => {
   return {
